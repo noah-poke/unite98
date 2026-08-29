@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+<!-- セキュリティ：自分のサイト内のファイル以外は一切読み込ませない -->
+<meta http-equiv="Content-Security-Policy"
+      content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data: blob:; base-uri 'none'; form-action 'none';">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+
+<title>ユナイト98｜ポケモンユナイト全ポケモン記憶チャレンジ</title>
+<meta name="description" content="ポケモンユナイトで使えるポケモン98体を、何も見ずに何体言えるか挑戦できるタイピングゲームです。">
+
+<!-- SNSでシェアされたときの表示 -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="ユナイト98">
+<meta property="og:description" content="ポケモンユナイトの使用可能ポケモン98体を、何体思い出せますか？">
+<meta property="og:url" content="https://noah-poke.github.io/unite98/">
+<meta property="og:image" content="https://noah-poke.github.io/unite98/ogp.png">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="theme-color" content="#0C1030">
+
+<link rel="stylesheet" href="assets/style.css?v=10">
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <div class="head-top">
+    <img src="icon-192.png" width="40" height="40" alt="" class="logo">
+    <p class="eyebrow">POKÉMON UNITE / MEMORY CHALLENGE</p>
+  </div>
+  <h1>あなたは何も見ずに<br><span class="hl"><span id="total-inline">98</span>体</span>言えますか？</h1>
+  <p class="lede">ユナイトで使えるポケモンの名前を、思い出せるだけ打ち込んでいくゲームです。合っていればマスが埋まります。攻略サイトを開いた時点で負けです。</p>
+
+  <div class="board">
+    <div class="board-top">
+      <div>
+        <span class="lbl">せいかい</span>
+        <div class="score num">
+          <span class="now" id="now">0</span>
+          <span class="sep">/</span>
+          <span class="all" id="all">98</span>
+        </div>
+      </div>
+      <div class="clock">
+        <span class="lbl">タイム</span>
+        <div class="t num" id="clock">00:00</div>
+      </div>
+    </div>
+    <div class="energy" id="energy"></div>
+    <div class="legend" id="legend"></div>
+    <p class="best" id="best"></p>
+  </div>
+</header>
+
+<div class="tabs" id="tabs" role="tablist"></div>
+
+<div class="inputbar">
+  <label class="visually-hidden" for="guess">ポケモンの名前</label>
+  <div class="field" id="field">
+    <input id="guess" type="text" autocomplete="off" autocapitalize="off"
+           autocorrect="off" spellcheck="false" enterkeyhint="done"
+           placeholder="ポケモンの名前を入力（ひらがなでもOK）">
+    <button type="button" id="btn-submit" disabled>決定</button>
+  </div>
+  <p class="msg" id="msg" role="status" aria-live="polite">名前を入力して決定を押してください。</p>
+</div>
+
+<main id="roles"></main>
+
+<div class="actions">
+  <button type="button" class="primary" id="btn-hint">ヒント：頭文字を出す</button>
+  <button type="button" class="danger" id="btn-give">ギブアップして答えを見る</button>
+  <button type="button" id="btn-copy">結果をコピー</button>
+  <button type="button" id="btn-save-image" disabled>結果を画像で保存</button>
+  <button type="button" id="btn-reset">もう一度やる</button>
+</div>
+
+<section class="result" id="result" aria-live="polite">
+  <h2>おつかれさま</h2>
+  <div class="big num" id="r-score">0 / 98</div>
+  <p id="r-detail"></p>
+</section>
+
+<footer>
+  <b>ロスターについて</b><br>
+  2026年8月時点の使用可能ポケモン98体で判定しています。メガシンカ形態はそれぞれ1体として数えています。<br>
+  新ポケモンが追加されたら <b>assets/roster.js</b> に1行足すだけで反映されます。<br><br>
+  <b>このサイトについて</b><br>
+  個人が趣味で作ったファンサイトです。スコアは端末のブラウザ内にのみ保存され、どこにも送信されません。<br>
+  『Pokémon UNITE』は株式会社ポケモン、任天堂、TiMi Studio Group の作品です。当サイトは公式とは関係ありません。
+
+  <a class="creator-link" href="https://www.youtube.com/@noah_poke" target="_blank" rel="noopener noreferrer">
+    <img src="images/channels4_profile.png" width="44" height="44" alt="" class="creator-icon">
+    <span class="creator-text">
+      <span class="creator-name">ノア｜ポケモンユナイト実況</span>
+      <span class="creator-handle">@noah_poke</span>
+    </span>
+  </a>
+</footer>
+
+</div>
+
+<script src="assets/roster.js?v=10"></script>
+<script src="assets/app.js?v=10"></script>
+</body>
+</html>
