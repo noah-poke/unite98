@@ -266,9 +266,13 @@ footer b{color:var(--muted);font-weight:700;}
   }
   .tile img{width:30px;height:30px;}
   .tile span{display:none;}
-  .tile:not(.found):not(.revealed)::before{
+  .tile:not(.found):not(.revealed):not(.hinted)::before{
     content:'?';font-size:12px;font-weight:700;color:var(--dim);
   }
+  .tile.hinted .hint-letter{
+    display:inline-block;font-size:16px;font-weight:800;color:var(--muted);
+  }
+  .tile.hinted .hint-dots{display:none;}
 
   .actions{margin-top:8px;}
 }

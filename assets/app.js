@@ -335,7 +335,15 @@
       if (t.classList.contains('found') || t.classList.contains('hinted')) continue;
       var n = t.dataset.name;
       var target = t;
-      target.textContent = n.charAt(0) + '○'.repeat(Math.max(n.length - 1, 1));
+      target.textContent = '';
+      var letter = document.createElement('span');
+      letter.className = 'hint-letter';
+      letter.textContent = n.charAt(0);
+      var dots = document.createElement('span');
+      dots.className = 'hint-dots';
+      dots.textContent = '○'.repeat(Math.max(n.length - 1, 1));
+      target.appendChild(letter);
+      target.appendChild(dots);
       target.classList.add('hinted');
       say('頭文字を1つ表示しました。');
       guessEl.focus();
