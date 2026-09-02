@@ -80,7 +80,8 @@ window.ROSTER = [
       { n:'ファイヤー',        id:'moltres' },
       { n:'オーダイル',        id:'feraligatr' },
       { n:'ウェーニバル',      id:'quaquaval' },
-      { n:'パルキア',          id:'palkia' }
+      { n:'パルキア',          id:'palkia' },
+      { n:'ソルガレオ',        id:'solgaleo' }
     ]
   },
   {
@@ -98,8 +99,7 @@ window.ROSTER = [
       { n:'シャワーズ',  id:'vaporeon' },
       { n:'ラプラス',    id:'lapras' },
       { n:'ホウオウ',    id:'ho-oh' },
-      { n:'フリーザー',  id:'articuno' },
-      { n:'ソルガレオ',  id:'solgaleo' }
+      { n:'フリーザー',  id:'articuno' }
     ]
   },
   {
